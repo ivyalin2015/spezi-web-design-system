@@ -8,7 +8,7 @@ SPDX-License-Identifier: MIT
 
 -->
 
-# Stanford Biodesign Digital Health Next.js Template Contributors
+# Stanford Spezi Web Design System Contributors
 
 - [Paul Schmiedmayer](https://github.com/PSchmiedmayer)
-- [Vishnu Ravi](https://github.com/vishnuravi)
+- [Nikolai Madlener](https://github.com/NikolaiMadlener)

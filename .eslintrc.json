@@ -3,6 +3,13 @@
   "parserOptions": {
     "project": "./tsconfig.json"
   },
+  "settings": {
+    "import/resolver": {
+      "typescript": {
+        "project": ["./tsconfig.json"]
+      }
+    }
+  },
   "parser": "@typescript-eslint/parser",
   "extends": [
     "plugin:@typescript-eslint/strict-type-checked",
@@ -19,7 +26,10 @@
     "**/jest.config.js",
     "**/next.config.js",
     "**/postcss.config.js",
-    "**/tailwind.config.js"
+    "**/tailwind.config.js",
+    "**/tsup.config.ts",
+    "**/reset.d.ts",
+    "/src/base_components/**"
   ],
   "rules": {
     "prettier/prettier": "error",
