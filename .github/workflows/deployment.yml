@@ -44,7 +44,12 @@ jobs:
       - name: Clean Install
         run: npm ci
       - name: Set version
-        run: npm version ${{ github.event.release.tag_name }}
+        run: npm version 0.2.1
+        env:
+          GIT_AUTHOR_NAME: "GitHub Actions"
+          GIT_COMMITTER_NAME: "GitHub Actions"
+          GIT_AUTHOR_EMAIL: "actions@github.com"
+          GIT_COMMITTER_EMAIL: "actions@github.com"
       - name: Build
         run: npm run build
       - name: Publish
