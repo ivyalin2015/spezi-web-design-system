@@ -7,10 +7,10 @@
 //
 
 import { CircleAlert } from 'lucide-react'
-import { type HTMLProps, type ReactNode } from 'react'
-import { cn } from '../../utils/className'
+import { type ReactNode } from 'react'
+import { Badge, type BadgeProps } from '@/components/Badge'
 
-export interface ErrorStateProps extends HTMLProps<HTMLDivElement> {
+export interface ErrorStateProps extends BadgeProps {
   /**
    * Name of the presented missing data entity
    * Provide pluralized and lowercased
@@ -23,22 +23,14 @@ export interface ErrorStateProps extends HTMLProps<HTMLDivElement> {
  * Component for surfacing inline query errors
  * */
 export const ErrorState = ({
-  className,
   children,
   entityName,
   ...props
 }: ErrorStateProps) => (
-  <div
-    className={cn(
-      'inline-flex-center gap-3 rounded-2xl bg-destructive/10 px-3 py-2 text-sm text-destructive',
-      className,
-    )}
-    role="alert"
-    {...props}
-  >
+  <Badge size="lg" variant="destructiveLight" role="alert" {...props}>
     <CircleAlert />
     <span>
       {children ?? <>Fetching {entityName} failed. Please try again later.</>}
     </span>
-  </div>
+  </Badge>
 )
