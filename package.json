@@ -130,6 +130,10 @@
       "types": "./dist/components/ErrorState.d.ts",
       "default":  "./dist/components/ErrorState.js"
     },
+    "./components/Badge":  {
+      "types": "./dist/components/Badge.d.ts",
+      "default":  "./dist/components/Badge.js"
+    },
     "./molecules/AsideBrandLayout":  {
       "types": "./dist/molecules/AsideBrandLayout.d.ts",
       "default": "./dist/molecules/AsideBrandLayout.js"
