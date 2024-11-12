@@ -126,6 +126,10 @@
       "types": "./dist/components/Tooltip.d.ts",
       "default":  "./dist/components/Tooltip.js"
     },
+    "./components/ErrorState":  {
+      "types": "./dist/components/ErrorState.d.ts",
+      "default":  "./dist/components/ErrorState.js"
+    },
     "./molecules/AsideBrandLayout":  {
       "types": "./dist/molecules/AsideBrandLayout.d.ts",
       "default": "./dist/molecules/AsideBrandLayout.js"
