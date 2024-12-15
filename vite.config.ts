@@ -40,6 +40,7 @@ const testExclude = [
   '**/*.stories.tsx',
   './postcss.config.js',
   './tailwind.config.js',
+  './src/tests/storybook.tsx',
 ]
 
 export default defineConfig({
