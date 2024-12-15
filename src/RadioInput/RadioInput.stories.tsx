@@ -7,32 +7,31 @@
 //
 
 import { type Meta } from '@storybook/react'
-import { RadioInput } from './RadioInput' // Adjust the import path based on your file structure.
+import { RadioInput, RadioItem, RadioIndicator } from './RadioInput'
 
 const meta: Meta = {
-  title: 'Components/RadioInput', // Storybook path
+  title: 'Components/RadioInput',
 }
 
 export default meta
 
-// Default story for RadioInput
 export const Default = () => (
   <RadioInput
-    defaultValue="option1"
-    aria-label="Example Radio Group"
-    className="gap-4"
+    className="RadioGroupRoot flex flex-col space-y-4"
+    defaultValue="default"
+    aria-label="View density"
   >
-    <RadioInput.Item value="option1" className="flex items-center gap-2">
-      <RadioInput.Indicator className="h-4 w-4 rounded-full bg-blue-500" />
-      <span>Option 1</span>
-    </RadioInput.Item>
-    <RadioInput.Item value="option2" className="flex items-center gap-2">
-      <RadioInput.Indicator className="h-4 w-4 rounded-full bg-blue-500" />
-      <span>Option 2</span>
-    </RadioInput.Item>
-    <RadioInput.Item value="option3" className="flex items-center gap-2">
-      <RadioInput.Indicator className="h-4 w-4 rounded-full bg-blue-500" />
-      <span>Option 3</span>
-    </RadioInput.Item>
+    <div className="flex items-center space-x-2">
+      <RadioItem value="1" id="r1" className="border-primary">
+        <RadioIndicator />
+      </RadioItem>
+      <label htmlFor="r1">Default</label>
+    </div>
+    <div className="flex items-center space-x-2">
+      <RadioItem value="2" id="r2" className="border-primary">
+        <RadioIndicator />
+      </RadioItem>
+      <label htmlFor="r2">Second Choice</label>
+    </div>
   </RadioInput>
 )
