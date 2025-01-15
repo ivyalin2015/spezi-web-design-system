@@ -12,9 +12,10 @@ import {
   type ElementRef,
   type ComponentPropsWithoutRef,
 } from 'react'
-import { cn } from '../utils/className'
+import { cn } from '../../utils/className'
+import { SideLabel } from '../SideLabel'
 
-export const RadioInput = RadioPrimitive.Root
+export const Radio = RadioPrimitive.Root
 
 export const RadioItem = forwardRef<
   ElementRef<typeof RadioPrimitive.Item>,
@@ -24,16 +25,12 @@ export const RadioItem = forwardRef<
     <RadioPrimitive.Item
       ref={ref}
       className={cn(
-        'relative flex h-6 w-6 items-center justify-center rounded-full border-2 border-border focus:ring-2 focus:ring-ring focus:ring-offset-1',
+        'relative flex h-6 w-6 items-center justify-center rounded-full border-2 border-secondary focus:ring-2 focus:ring-ring focus:ring-offset-1',
         className,
       )}
       {...props}
     />
-    {label && (
-      <label htmlFor={props.id} className="popover-foreground">
-        {label}
-      </label>
-    )}
+    {label && <SideLabel className="popover-foreground">{label}</SideLabel>}
   </div>
 ))
 RadioItem.displayName = RadioPrimitive.Item.displayName

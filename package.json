@@ -198,8 +198,7 @@
     "lint:ci": "eslint --output-file eslint_report.json --format json .",
     "lint:fix": "eslint . --fix",
     "storybook": "storybook dev -p 6006",
-    "test": "vitest run --coverage",
-    "build-storybook": "storybook build"
+    "test": "vitest run --coverage"
   },
   "dependencies": {
     "@hookform/resolvers": "^3.9.0",
@@ -233,15 +232,14 @@
     "zod": "^3.23.8"
   },
   "devDependencies": {
-    "@chromatic-com/storybook": "^3.2.2",
-    "@storybook/addon-essentials": "^8.4.6",
-    "@storybook/addon-interactions": "^8.4.6",
-    "@storybook/addon-links": "^8.4.6",
-    "@storybook/addon-onboarding": "^8.4.6",
-    "@storybook/blocks": "^8.4.6",
-    "@storybook/react": "^8.4.6",
-    "@storybook/react-vite": "^8.4.6",
-    "@storybook/test": "^8.4.6",
+    "@storybook/addon-essentials": "^8.3.5",
+    "@storybook/addon-interactions": "^8.3.5",
+    "@storybook/addon-links": "^8.3.5",
+    "@storybook/addon-onboarding": "^8.3.5",
+    "@storybook/blocks": "^8.3.5",
+    "@storybook/react": "^8.3.5",
+    "@storybook/react-vite": "^8.3.5",
+    "@storybook/test": "^8.3.5",
     "@testing-library/jest-dom": "^6",
     "@testing-library/react": "^16",
     "@total-typescript/ts-reset": "^0.6.1",

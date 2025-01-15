@@ -7,15 +7,15 @@
 //
 
 import { render, screen } from '@testing-library/react'
-import { RadioInput, RadioItem } from './RadioInput'
+import { Radio, RadioItem } from './Radio'
 
 describe('RadioInput', () => {
   it('renders radio buttons', () => {
     render(
-      <RadioInput defaultValue="option1" aria-label="Example Radio Input">
+      <Radio defaultValue="option1" aria-label="Example Radio Input">
         <RadioItem value="option1" label="Option 1" />
         <RadioItem value="option2" label="Option 2" />
-      </RadioInput>,
+      </Radio>,
     )
 
     const option1 = screen.getByLabelText('Option 1')
