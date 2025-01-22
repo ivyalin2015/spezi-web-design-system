@@ -15,9 +15,11 @@ import {
 import { cn } from '../../utils/className'
 import { SideLabel } from '../SideLabel'
 
-export const Radio = RadioPrimitive.Root
+// entire list of choices
+export const RadioGroup = RadioPrimitive.Root
 
-export const RadioItem = forwardRef<
+// wrapper for one of the list items - includes selection circle and text
+export const Radio = forwardRef<
   ElementRef<typeof RadioPrimitive.Item>,
   ComponentPropsWithoutRef<typeof RadioPrimitive.Item> & { label?: string }
 >(({ className, label, ...props }, ref) => (
@@ -25,15 +27,23 @@ export const RadioItem = forwardRef<
     <RadioPrimitive.Item
       ref={ref}
       className={cn(
-        'relative flex h-6 w-6 items-center justify-center rounded-full border-2 border-secondary focus:ring-2 focus:ring-ring focus:ring-offset-1',
+        'flex-center focus-ring relative size-6 rounded-full border-2 border-secondary',
         className,
       )}
       {...props}
-    />
-    {label && <SideLabel className="popover-foreground">{label}</SideLabel>}
+    >
+      <RadioPrimitive.Indicator
+        ref={ref}
+        className={cn('flex-center size-full', className)}
+        {...props}
+      >
+        <span className="block size-2.5 rounded-full bg-primary"></span>
+      </RadioPrimitive.Indicator>
+    </RadioPrimitive.Item>
+    {label && <SideLabel className="text-sm leading-none">{label}</SideLabel>}
   </div>
 ))
-RadioItem.displayName = RadioPrimitive.Item.displayName
+Radio.displayName = RadioPrimitive.Item.displayName
 
 export const RadioIndicator = forwardRef<
   ElementRef<typeof RadioPrimitive.Indicator>,
@@ -41,13 +51,10 @@ export const RadioIndicator = forwardRef<
 >(({ className, ...props }, ref) => (
   <RadioPrimitive.Indicator
     ref={ref}
-    className={cn(
-      'relative flex h-full w-full items-center justify-center',
-      className,
-    )}
+    className={cn('flex-center relative size-full', className)}
     {...props}
   >
-    <span className="relative block h-2.5 w-2.5 rounded-full bg-primary"></span>
+    <span className="relative block size-2.5 rounded-full bg-primary"></span>
   </RadioPrimitive.Indicator>
 ))
 

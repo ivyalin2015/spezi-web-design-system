@@ -7,7 +7,8 @@
 //
 
 import { type Meta } from '@storybook/react'
-import { Radio, RadioItem, RadioIndicator } from './Radio'
+import { RadioGroup, Radio } from './Radio'
+import { SideLabel } from '../SideLabel'
 
 const meta: Meta = {
   title: 'Components/RadioInput',
@@ -16,22 +17,20 @@ const meta: Meta = {
 export default meta
 
 export const Default = () => (
-  <Radio
+  <RadioGroup
     className="flex flex-col space-y-4"
     defaultValue="default"
     aria-label="View density"
   >
-    <div className="flex items-center space-x-2">
-      <RadioItem value="1" id="r1" className="border-primary">
-        <RadioIndicator />
-      </RadioItem>
-      <label htmlFor="r1">Default</label>
-    </div>
-    <div className="flex items-center space-x-2">
-      <RadioItem value="2" id="r2" className="border-primary">
-        <RadioIndicator />
-      </RadioItem>
-      <label htmlFor="r2">Second Choice</label>
-    </div>
-  </Radio>
+    <SideLabel htmlFor="1" label="Default" className="flex items-center gap-2">
+      <Radio value="1" id="r1" className="border-primary"></Radio>
+    </SideLabel>
+    <SideLabel
+      htmlFor="2"
+      label="Second Choice"
+      className="flex items-center gap-2"
+    >
+      <Radio value="2" id="r2" className="border-primary"></Radio>
+    </SideLabel>
+  </RadioGroup>
 )
