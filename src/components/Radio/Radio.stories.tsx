@@ -22,14 +22,10 @@ export const Default = () => (
     defaultValue="default"
     aria-label="View density"
   >
-    <SideLabel htmlFor="1" label="Default" className="flex items-center gap-2">
+    <SideLabel htmlFor="r1" label="Default" className="flex items-center">
       <Radio value="1" id="r1" className="border-primary"></Radio>
     </SideLabel>
-    <SideLabel
-      htmlFor="2"
-      label="Second Choice"
-      className="flex items-center gap-2"
-    >
+    <SideLabel htmlFor="r2" label="Second Choice" className="flex items-center">
       <Radio value="2" id="r2" className="border-primary"></Radio>
     </SideLabel>
   </RadioGroup>

@@ -13,7 +13,6 @@ import {
   type ComponentPropsWithoutRef,
 } from 'react'
 import { cn } from '../../utils/className'
-import { SideLabel } from '../SideLabel'
 
 // entire list of choices
 export const RadioGroup = RadioPrimitive.Root
@@ -21,27 +20,18 @@ export const RadioGroup = RadioPrimitive.Root
 // wrapper for one of the list items - includes selection circle and text
 export const Radio = forwardRef<
   ElementRef<typeof RadioPrimitive.Item>,
-  ComponentPropsWithoutRef<typeof RadioPrimitive.Item> & { label?: string }
->(({ className, label, ...props }, ref) => (
-  <div className="flex items-center gap-4">
-    <RadioPrimitive.Item
-      ref={ref}
-      className={cn(
-        'flex-center focus-ring relative size-6 rounded-full border-2 border-secondary',
-        className,
-      )}
-      {...props}
-    >
-      <RadioPrimitive.Indicator
-        ref={ref}
-        className={cn('flex-center size-full', className)}
-        {...props}
-      >
-        <span className="block size-2.5 rounded-full bg-primary"></span>
-      </RadioPrimitive.Indicator>
-    </RadioPrimitive.Item>
-    {label && <SideLabel className="text-sm leading-none">{label}</SideLabel>}
-  </div>
+  ComponentPropsWithoutRef<typeof RadioPrimitive.Item>
+>(({ className, ...props }, ref) => (
+  <RadioPrimitive.Item
+    ref={ref}
+    className={cn(
+      'focus-ring flex-center size-4 shrink-0 rounded-full border border-input disabled:cursor-not-allowed disabled:opacity-50',
+      className,
+    )}
+    {...props}
+  >
+    <RadioPrimitive.Indicator className="flex-center size-2 rounded-full bg-primary" />
+  </RadioPrimitive.Item>
 ))
 Radio.displayName = RadioPrimitive.Item.displayName
 
@@ -54,7 +44,7 @@ export const RadioIndicator = forwardRef<
     className={cn('flex-center relative size-full', className)}
     {...props}
   >
-    <span className="relative block size-2.5 rounded-full bg-primary"></span>
+    <span className="flex-center relative block size-2.5 rounded-full bg-primary"></span>
   </RadioPrimitive.Indicator>
 ))
 

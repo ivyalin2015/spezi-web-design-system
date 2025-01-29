@@ -33,7 +33,7 @@ export const SideLabel = ({
     )}
     {...props}
   >
-    <div className="mt-1">{children}</div>
+    <div>{children}</div>
     <div className="text-sm leading-none">{label}</div>
   </label>
 )
