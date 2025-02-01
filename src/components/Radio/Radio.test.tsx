@@ -10,7 +10,7 @@ import { render, screen } from '@testing-library/react'
 import { RadioGroup, Radio } from './Radio'
 
 describe('RadioInput', () => {
-  it('renders radio buttons', () => {
+  it('renders radio inputs', () => {
     render(
       <RadioGroup defaultValue="option1" aria-label="Example Radio Input">
         <Radio value="option1" label="Option 1" />
