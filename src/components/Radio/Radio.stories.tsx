@@ -11,7 +11,7 @@ import { RadioGroup, Radio } from './Radio'
 import { SideLabel } from '../SideLabel'
 
 const meta: Meta = {
-  title: 'Components/RadioInput',
+  title: 'Components/Radio',
 }
 
 export default meta
@@ -22,11 +22,11 @@ export const Default = () => (
     defaultValue="default"
     aria-label="View density"
   >
-    <SideLabel htmlFor="r1" label="Default" className="flex items-center">
-      <Radio value="1" id="r1" className="border-primary"></Radio>
+    <SideLabel label="Default">
+      <Radio value="1" id="r1"></Radio>
     </SideLabel>
-    <SideLabel htmlFor="r2" label="Second Choice" className="flex items-center">
-      <Radio value="2" id="r2" className="border-primary"></Radio>
+    <SideLabel label="Second Choice">
+      <Radio value="2" id="r2"></Radio>
     </SideLabel>
   </RadioGroup>
 )

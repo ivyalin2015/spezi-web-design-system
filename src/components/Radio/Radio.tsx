@@ -14,10 +14,11 @@ import {
 } from 'react'
 import { cn } from '../../utils/className'
 
-// entire list of choices
+/**
+ * Container for Radio inputs
+ * */
 export const RadioGroup = RadioPrimitive.Root
 
-// wrapper for one of the list items - includes selection circle and text
 export const Radio = forwardRef<
   ElementRef<typeof RadioPrimitive.Item>,
   ComponentPropsWithoutRef<typeof RadioPrimitive.Item>
@@ -34,18 +35,3 @@ export const Radio = forwardRef<
   </RadioPrimitive.Item>
 ))
 Radio.displayName = RadioPrimitive.Item.displayName
-
-export const RadioIndicator = forwardRef<
-  ElementRef<typeof RadioPrimitive.Indicator>,
-  ComponentPropsWithoutRef<typeof RadioPrimitive.Indicator>
->(({ className, ...props }, ref) => (
-  <RadioPrimitive.Indicator
-    ref={ref}
-    className={cn('flex-center relative size-full', className)}
-    {...props}
-  >
-    <span className="flex-center relative block size-2.5 rounded-full bg-primary"></span>
-  </RadioPrimitive.Indicator>
-))
-
-RadioIndicator.displayName = 'RadioInput'
