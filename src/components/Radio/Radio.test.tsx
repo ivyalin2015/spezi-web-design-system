@@ -6,22 +6,41 @@
 // SPDX-License-Identifier: MIT
 //
 
-import { render, screen } from '@testing-library/react'
+import { fireEvent, render, screen } from '@testing-library/react'
+import { vitest } from 'vitest'
 import { RadioGroup, Radio } from './Radio'
 
 describe('RadioInput', () => {
   it('renders radio inputs', () => {
+    const onSelectedChange1 = vitest.fn()
+    const onSelectedChange2 = vitest.fn()
+
     render(
       <RadioGroup defaultValue="option1" aria-label="Example Radio Input">
-        <Radio value="option1" label="Option 1" />
-        <Radio value="option2" label="Option 2" />
+        <Radio
+          value="option1"
+          id="option1"
+          onChange={onSelectedChange1}
+          data-testid="option1"
+        />
+        <Radio
+          value="option2"
+          id="option2"
+          onChange={onSelectedChange2}
+          data-testid="option2"
+        />
       </RadioGroup>,
     )
 
-    const option1 = screen.getByLabelText('Option 1')
-    const option2 = screen.getByLabelText('Option 2')
+    const option1 = screen.getByTestId('option1')
+    const option2 = screen.getByTestId('option2')
 
-    expect(option1).toBeInTheDocument()
-    expect(option2).toBeInTheDocument()
+    fireEvent.click(option1)
+    expect(option1).toBeChecked()
+    expect(option2).not.toBeChecked()
+
+    fireEvent.click(option2)
+    expect(option2).toBeChecked()
+    expect(option1).not.toBeChecked()
   })
 })
