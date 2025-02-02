@@ -10,7 +10,7 @@ import { fireEvent, render, screen } from '@testing-library/react'
 import { vitest } from 'vitest'
 import { RadioGroup, Radio } from './Radio'
 
-describe('RadioInput', () => {
+describe('Radio', () => {
   it('renders radio inputs', () => {
     const onSelectedChange1 = vitest.fn()
     const onSelectedChange2 = vitest.fn()
